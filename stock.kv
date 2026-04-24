@@ -1,0 +1,53 @@
+<RootWidget>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint_y: 0.1
+        Label:
+            text: '股票观察家'
+            font_size: 24
+    BoxLayout:
+        StockList:
+            id: stock_list
+            size_hint_x: 0.4
+        DetailView:
+            id: detail_view
+            size_hint_x: 0.6
+
+<StockList>:
+    viewclass: 'StockItem'
+    RecycleBoxLayout:
+        default_size: None, dp(50)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+
+<DetailView>:
+    orientation: 'vertical'
+    Label:
+        id: code_label
+        text: '代码'
+        font_size: 18
+    Label:
+        id: name_label
+        text: '名称'
+        font_size: 22
+    BoxLayout:
+        size_hint_y: 0.1
+        Label:
+            id: price_label
+            text: '0.00'
+        Label:
+            id: change_label
+            text: '0.00%'
+    BoxLayout:
+        size_hint_y: 0.1
+        Label:
+            text: '成交量:'
+        Label:
+            id: volume_label
+            text: '0'
+    Label:
+        id: kline_text
+        text: 'K线区域'
+        size_hint_y: 0.5
